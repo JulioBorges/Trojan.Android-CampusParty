@@ -5,3 +5,15 @@ C:\Users\erick.silva\Documents\AndroidControl.Hacker\AndroidControl.Hacker\Andro
 C:\Users\erick.silva\Documents\AndroidControl.Hacker\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\AndroidControl.Hacker.csprojResolveAssemblyReference.cache
 C:\Users\erick.silva\Documents\AndroidControl.Hacker\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\AndroidControl.Hacker.exe
 C:\Users\erick.silva\Documents\AndroidControl.Hacker\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\AndroidControl.Hacker.pdb
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\AndroidControl.Hacker.exe.config
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\AndroidControl.Hacker.exe
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\AndroidControl.Hacker.pdb
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\Fleck.dll
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\AndroidControl.Hacker.csproj.CopyComplete
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\AndroidControl.Hacker.exe
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\AndroidControl.Hacker.pdb
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\anonymous-2.jpg
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\anonymous.jpg
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\Grito.mp3
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\AxInterop.WMPLib.dll
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\AndroidControl.Hacker.csprojAssemblyReference.cache

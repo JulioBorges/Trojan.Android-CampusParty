@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Threading;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 
 namespace AndroidControl.Hacker
 {
@@ -18,7 +18,9 @@ namespace AndroidControl.Hacker
             this.Y = y;
         }
 
-        public POINT(System.Drawing.Point pt) : this(pt.X, pt.Y) { }
+        public POINT(System.Drawing.Point pt) : this(pt.X, pt.Y)
+        {
+        }
 
         public static implicit operator System.Drawing.Point(POINT p)
         {
@@ -33,18 +35,22 @@ namespace AndroidControl.Hacker
 
     public class Helper
     {
-        const uint SPI_SETDESKWALLPAPER = 0x14;
-        const uint SPIF_UPDATEINIFILE = 0x01;
+        private const uint SPI_SETDESKWALLPAPER = 0x14;
+        private const uint SPIF_UPDATEINIFILE = 0x01;
 
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool GetCursorPos(out POINT lpPoint);
+        private static extern bool GetCursorPos(out POINT lpPoint);
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         [DllImport("user32.dll")]
         private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        [DllImport("user32.dll")]
+        private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
+
         #region Methods to acess unmanaged code of Windows OS (DLL buit in C or C++) PINVOKE
 
         /// <summary>
@@ -54,7 +60,7 @@ namespace AndroidControl.Hacker
         /// <param name="fSwap"></param>
         /// <returns></returns>
         [DllImport("user32.dll")]
-        static extern bool SwapMouseButton(bool fSwap);
+        private static extern bool SwapMouseButton(bool fSwap);
 
         /// <summary>
         ///  Method to hide the mouse pointer
@@ -63,7 +69,7 @@ namespace AndroidControl.Hacker
         /// <param name="bShow"></param>
         /// <returns></returns>
         [DllImport("user32.dll")]
-        static extern int ShowCursor(bool bShow);
+        private static extern int ShowCursor(bool bShow);
 
         /// <summary>
         /// Method to open/close the cd/dvd driver
@@ -75,7 +81,7 @@ namespace AndroidControl.Hacker
         /// <param name="hwndCallback"></param>
         /// <returns></returns>
         [DllImport("winmm.dll")]
-        static extern Int32 mciSendString(string command, StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
+        private static extern Int32 mciSendString(string command, StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
 
         /// <summary>
         /// Method to logout of Windows
@@ -94,39 +100,37 @@ namespace AndroidControl.Hacker
         [DllImport("user32")]
         public static extern void LockWorkStation();
 
-
         [DllImport("user32.dll")]
         private static extern bool SystemParametersInfo(
             uint uiAction, uint uiParam, string pvParam, uint fWinIni);
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool SetCursorPos(int x, int y);
+        private static extern bool SetCursorPos(int x, int y);
 
-        #endregion
+        #endregion Methods to acess unmanaged code of Windows OS (DLL buit in C or C++) PINVOKE
+
         public static void SetWallpaper(string path)
         {
             SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, path, SPIF_UPDATEINIFILE);
         }
+
         public static void SwapMouse(bool swap)
         {
             SwapMouseButton(swap);
         }
 
-         
-        public static void MouseCursor( )
+        public static void MouseCursor()
         {
             POINT point;
             GetCursorPos(out point);
             for (int i = 0; i < 4; i++)
             {
-                
                 var x = point.X + i * 100;
                 var y = point.Y - i * 100;
                 SetCursorPos(x, y);
                 Thread.Sleep(500);
             }
-            
         }
 
         public static void OpenCdDriver()
@@ -151,14 +155,44 @@ namespace AndroidControl.Hacker
             LockWorkStation();
         }
 
-
-
         public static void TaskBar(Int32 visibility)
         {
             var hwnd = FindWindow("Shell_TrayWnd", "");
             ShowWindow(hwnd, visibility);
         }
 
+        private static WMPLib.WindowsMediaPlayer _player;
 
+        public static void Grita()
+        {
+            if (_player == null)
+            {
+                _player = new WMPLib.WindowsMediaPlayer();
+                var grito = Path.Combine(Directory.GetCurrentDirectory(), "Grito.mp3");
+                _player.URL = grito;
+                _player.settings.volume = 100;
+                _player.PlayStateChange += Player_PlayStateChange;
+                _player.settings.autoStart = true;
+                _player.controls.play();
+            }
+        }
+
+        private static void Player_PlayStateChange(int NewState)
+        {
+            if ((WMPLib.WMPPlayState)NewState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                if (_player != null)
+                    _player.controls.play();
+            }
+        }
+
+        public static void ParaDeGritar()
+        {
+            if (_player != null)
+            {
+                //_player.controls.stop();
+                _player = null;
+            }
+        }
     }
 }

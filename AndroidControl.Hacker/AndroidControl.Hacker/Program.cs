@@ -1,26 +1,29 @@
 ﻿using Fleck;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AndroidControl.Hacker
 {
-
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-
             var meuIp = GetLocalIPAddress();
             Console.WriteLine("My IP: " + meuIp);
-            var _servidor = new WebSocketServer("ws://" + meuIp + ":12345");
+
+            string porta = "15345";
+
+            if (args != null && args.Length > 0)
+                porta = args[0];
+
+            var _servidor = new WebSocketServer($"ws://{meuIp}:{porta}");
             var _conexoes = new List<IWebSocketConnection>();
             var swap = false;
             var cursor = false;
+            var grita = false;
             var barra = 1;
             _servidor.Start((conexao) =>
             {
@@ -28,12 +31,12 @@ namespace AndroidControl.Hacker
                 {
                     _conexoes.Add(conexao);
                     Console.WriteLine("User connected: " + conexao.ConnectionInfo.ClientIpAddress);
-
                 };
 
                 conexao.OnClose = () =>
                 {
                     _conexoes.Remove(conexao);
+                    Console.WriteLine("User disconnected: " + conexao.ConnectionInfo.ClientIpAddress);
                 };
 
                 conexao.OnMessage = (mensagem) =>
@@ -56,37 +59,50 @@ namespace AndroidControl.Hacker
                             }
                         case "movecursor":
                             {
-                                 
                                 Helper.MouseCursor();
                                 break;
                             }
                         case "opencddriver":
                             {
-
                                 Helper.OpenCdDriver();
                                 break;
                             }
                         case "lock":
                             {
-
                                 Helper.Lock();
                                 break;
                             }
+                        case "grita":
+                            {
+                                grita = !grita;
 
+                                if (grita)
+                                    Helper.Grita();
+                                else
+                                    Helper.ParaDeGritar();
+
+                                break;
+                            }
                         case "wallpaper":
                             {
-                                Helper.SetWallpaper(@"C:\Users\erick.silva\Downloads\vampeta.jpg");
-                                break;
+                                var papelDeParede = Path.Combine(Directory.GetCurrentDirectory(), _wallpapers[countWallPaper]);
 
+                                Helper.SetWallpaper(papelDeParede);
+                                countWallPaper++;
+
+                                if (countWallPaper > 1)
+                                    countWallPaper = 0;
+                                break;
                             }
                     }
-
                 };
             });
 
-            Console.ReadKey();
+            while (true) { }
         }
 
+        private static int countWallPaper = 0;
+        private static readonly string[] _wallpapers = new string[] { @"anonymous.jpg", @"anonymous-2.jpg" };
 
         public static string GetLocalIPAddress()
         {

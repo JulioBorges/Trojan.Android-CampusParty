@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidControl.Hacker", "AndroidControl.Hacker\AndroidControl.Hacker.csproj", "{53065E71-CDCE-42EB-A612-A602BC25B58E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop Control", "Desktop Control\Desktop Control.csproj", "{E5B4009C-5628-438E-AC10-F6CC5612529E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5B4009C-5628-438E-AC10-F6CC5612529E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B4009C-5628-438E-AC10-F6CC5612529E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B4009C-5628-438E-AC10-F6CC5612529E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B4009C-5628-438E-AC10-F6CC5612529E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C784383B-25B4-4A2D-8161-72EE445EEF78}
 	EndGlobalSection
 EndGlobal
