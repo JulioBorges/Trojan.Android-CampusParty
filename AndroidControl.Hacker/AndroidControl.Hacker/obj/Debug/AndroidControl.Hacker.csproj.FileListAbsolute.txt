@@ -17,3 +17,9 @@ C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.H
 C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\Grito.mp3
 C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\AxInterop.WMPLib.dll
 C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\AndroidControl.Hacker.csprojAssemblyReference.cache
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\AudioSwitcher.AudioApi.CoreAudio.dll
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\AudioSwitcher.AudioApi.dll
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\NAudio.dll
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\bin\Debug\NAudio.xml
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\Interop.Shell32.dll
+C:\Projects\J9\Trojan.Android-CampusParty\AndroidControl.Hacker\AndroidControl.Hacker\obj\Debug\AndroidControl.Hacker.csproj.ResolveComReference.cache

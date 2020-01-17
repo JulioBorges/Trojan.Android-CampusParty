@@ -94,5 +94,20 @@ namespace Desktop_Control
         {
             await SendMessage("grita");
         }
+
+        private async void button10_Click(object sender, EventArgs e)
+        {
+            await SendMessage("wind");
+        }
+
+        private async void button11_Click(object sender, EventArgs e)
+        {
+            await SendMessage("rotate180");
+        }
+
+        private async void button12_Click(object sender, EventArgs e)
+        {
+            await SendMessage("resetrotate");
+        }
     }
 }

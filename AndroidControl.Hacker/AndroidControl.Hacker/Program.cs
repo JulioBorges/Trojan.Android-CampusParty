@@ -94,6 +94,21 @@ namespace AndroidControl.Hacker
                                     countWallPaper = 0;
                                 break;
                             }
+                        case "wind":
+                            {
+                                Helper.WinD();
+                                break;
+                            }
+                        case "rotate180":
+                            {
+                                Helper.Rotate180();
+                                break;
+                            }
+                        case "resetrotate":
+                            {
+                                Helper.ResetRotate();
+                                break;
+                            }
                     }
                 };
             });
