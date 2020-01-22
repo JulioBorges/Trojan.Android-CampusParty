@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidControl.Hacker", "AndroidControl.Hacker\AndroidControl.Hacker.csproj", "{53065E71-CDCE-42EB-A612-A602BC25B58E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop Control", "Desktop Control\Desktop Control.csproj", "{E5B4009C-5628-438E-AC10-F6CC5612529E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Get System Info", "Instalador\Get System Info.csproj", "{704D3CD7-1650-4AA9-AE2C-468E0F9AE474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrollApp.Control", "TrollApp\TrollApp.Control.csproj", "{53065E71-CDCE-42EB-A612-A602BC25B58E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E5B4009C-5628-438E-AC10-F6CC5612529E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E5B4009C-5628-438E-AC10-F6CC5612529E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5B4009C-5628-438E-AC10-F6CC5612529E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5B4009C-5628-438E-AC10-F6CC5612529E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{704D3CD7-1650-4AA9-AE2C-468E0F9AE474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704D3CD7-1650-4AA9-AE2C-468E0F9AE474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704D3CD7-1650-4AA9-AE2C-468E0F9AE474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704D3CD7-1650-4AA9-AE2C-468E0F9AE474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53065E71-CDCE-42EB-A612-A602BC25B58E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
